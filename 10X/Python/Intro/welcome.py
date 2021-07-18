@@ -1,1 +1,2 @@
-print("welcome to python")
+name=input()
+print("Hello "+name)
