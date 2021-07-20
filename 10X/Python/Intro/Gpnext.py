@@ -1,0 +1,5 @@
+int1=eval(input())
+int2=eval(input())
+int3=eval(input())
+nextInt=int(int3*(int2/int1))
+print(nextInt)
