@@ -1,6 +1,6 @@
 s=input()
 l=len(s)
-n=list(s)
+n=list()
 p=[]
 sum=0
 for i in range(0,l):
