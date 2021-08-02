@@ -52,12 +52,11 @@ def calculate_total_price_of_bricks(dimensions, brick_count):
             w=dimensions[0]
         if dimensions[1]!=-1 and dimensions[1]>0:
         	h=dimensions[1]
-    v=volume(100,width=w,height=h)
-    vol=(v*brick_count)
+    vol=(volume(100,width=w,height=h)*brick_count)
     return calculate_price(vol)
     
-def round(price):
-    return int(price)
+#def round(price):
+ #   return int(price)
 
 
 
