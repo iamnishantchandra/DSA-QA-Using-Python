@@ -24,8 +24,9 @@ Output1:
 '''
 import math
 n=int(input())
-incom=list(input().split())
+incom=list(map(int,input().split()))
 su=0
 for i  in range(n):
-    su+=math.ceil((int(incom[i])*.07))
+    su+=math.ceil(incom[i]*.07)
 print(su)
+
