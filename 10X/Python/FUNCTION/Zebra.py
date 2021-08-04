@@ -28,6 +28,7 @@ False
 
 
 '''
+"""
 n=int(input())
 l = []
 f=False
@@ -35,7 +36,7 @@ for i in range(0,n):
     l.append(int(input()))
 
 for i in range(0,n-1):
-    if l[i]>0 and l[i+1]<0:
+    if (l[i]>0 and l[i+1]<0):
         f=True
     elif l[i]<0 and l[i+1]>0:
         f=True
@@ -46,7 +47,23 @@ for i in range(0,n-1):
 if f:
     print(True)
 
-
+'''elif (prev<0 and c>0):
+        f=True'''
+"""
+n=int(input())
+f=False
+prev=int(input())
+for i in range(0,n-1):
+    c=int(input())
+    if (prev>0 and c<0)or(prev<0 and c>0):
+        f=True
+    else:
+        f=False
+        print(f)
+        break
+    prev=c
+if f:
+    print(True)
 
 
 
