@@ -30,7 +30,7 @@ asdfdsa
 s=input()
 n=int(input())
 if n==0 and len(s)>1:
-    print(s+s[:-(len(s)+1):-1])
+    print(s+s[:-(len(s)+1):(-1)])
 elif n==1 and len(s)>1:
     print(s+s[-2:-(len(s)+1):-1])
 if(len(s)==1):
