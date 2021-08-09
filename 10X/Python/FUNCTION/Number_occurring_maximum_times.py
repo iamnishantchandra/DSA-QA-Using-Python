@@ -67,7 +67,7 @@ if __name__ == "__main__":
         numbers.append(int(input()))
  
     print(occurence_check(numbers))
-'''
+
 n=int(input())
 s=[int(input()) for i in range(n)]
 count=0
@@ -87,5 +87,26 @@ for i in range(0,n):
 if m:
     print(-1)
 
-''''''
+'''
+n=int(input())
+s=[int(input()) for i in range(n)]
+arr=[]
+count=0
+prev=s[0]
+m=0
+for i in range(n):
+    if (prev==s[i]):
+        count+=1
+        if(count==4):
+            arr.append(s[i])
+        m=max(m,count)
+    else:
+        prev=s[i]
+        count=1    
+
+if arr:
+    for i in arr:
+         print(i) 
+else:
+    print(-1)
     
