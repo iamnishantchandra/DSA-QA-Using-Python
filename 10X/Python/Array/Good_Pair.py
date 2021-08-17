@@ -25,9 +25,6 @@ Explanation:
 (0,3), (0,4), (3,4), (2,5) index position elements
 
 """
-from typing import Counter
-
-
 a=list(map(int,input().split()))
 count=0
 for i in range(len(a)):
