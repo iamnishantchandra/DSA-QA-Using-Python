@@ -59,7 +59,9 @@ def intersect(nums1, nums2):
 
 
 '''
+"""
 from collections import defaultdict
+from collections import Counter
 def intersect(nums1, nums2):
     # implement this function
     n1=defaultdict(int)
@@ -84,9 +86,58 @@ def intersect(nums1, nums2):
         return arr
     else:
         return[-1]
+"""
 
+"""
 
-
+def intersect(nums1, nums2):
+    # implement this function
+    n1={}
+    n2={}
+    f=True
+    arr=[]
+    for i in nums1:
+        if i in n1:
+            n1[i]+=1
+        else:
+            n1[i]=1
+    for i in nums2:
+        if i in n2:
+            n2[i]+=1
+        else:
+            n2[i]=1
+    for i in n1:
+        if i in n1 and i in n2:
+            r=min(n1[i],n2[i])
+            #print((str(i)+"\n")*r,end="")
+            arr.append((str(i)+"\n")*r,end="")
+    if arr:
+        return arr
+    else:
+        return[-1]
+"""
+'''
+from collections import Counter
+def intersect(nums1, nums2):
+    n1=Counter(nums1)
+    n2=Counter(nums2)
+    arr=[]
+    for i in n1:
+        if n2[i]==0:
+            n1[i]=-1
+        else:
+            n1[i]=min(n1[i],n2[i])
+    for i in n1:
+        if n1[i]>0:
+            r=n1[i]
+            arr.append((str(i)+"\n")*r)
+    print(arr)
+    if arr:
+        return arr
+    else:
+        return[-1]
+    
+    
 
 # DO NOT change anything below this line
 if __name__ == "__main__":
@@ -100,4 +151,47 @@ if __name__ == "__main__":
         nums2.append(int(input()))
 
     for element in intersect(nums1, nums2):
-        print(element)
+        print(element,end="")
+'''
+
+def intersect(nums1, nums2):
+    arr=[]
+    n1={}
+    n2={}
+    for i in nums1:
+        if i in n1:
+            n1[i]+=1
+        else:
+            n1[i]=1
+    for i in nums2:
+        if i in n2:
+            n2[i]+=1
+        else:
+            n2[i]=1
+    for i in n1:
+        if i in n2:
+            n1[i]=min(n1[i],n2[i])
+        else:
+            n1[i]=-1
+    for i in n1:
+        if n1[i]>0:
+            r=n1[i]
+            arr.append((str(i)+"\n")*r)
+    if arr:
+        return arr
+    else:
+        return[-1]
+
+# DO NOT change anything below this line
+if __name__ == "__main__":
+    num1_len = int(input())
+    nums1 = []
+    for index in range(num1_len):
+        nums1.append(int(input()))
+    num2_len = int(input())
+    nums2 = []
+    for index in range(num2_len):
+        nums2.append(int(input()))
+
+    for element in intersect(nums1, nums2):
+        print(element,end="")

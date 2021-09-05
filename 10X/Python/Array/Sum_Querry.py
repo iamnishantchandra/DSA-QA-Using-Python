@@ -40,10 +40,23 @@ for k in range(tc):
     b=a[sp-1:ep]
     print(sum(b))
 '''
+def sumqueue(a,n,pre):
+    pre[0]=a[0]
+    for i in range(1,n):
+        pre[i]=pre[i-1]+a[i]
+def renge(sp,ep):
+    if sp==0:
+        return pre[ep]
+    else:
+        return pre[ep]-pre[sp-1]
+
+
 n,tc=map(int,input().split())
 a=[int(x) for x in input().split()]
+pre=[0 for i in range(n)]
+sumqueue(a,n,pre)
 for k in range(tc):
     b=[]
     sp,ep=map(int,input().split())
-    b=a[sp-1:ep]
-    print(sum(b))
+    print(renge(sp-1,ep-1))
+   
